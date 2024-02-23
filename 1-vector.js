@@ -7,17 +7,20 @@
 // Your code here.
 
 class Vec {
-    constructor(x,y){
-        this.x = 0
-        this.y = 0
-        this.graph = graph
-        new vec(x,y);
+
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        length = Math.sqrt(this.x * this.x + this.y * this.y);
+        }
+
+    plus(v) {
+        return { x: this.x + v.x, y: this.y + v.y };
     }
 
-get(x,y){
-
-}
- 
+    minus(v) {
+        return { x: this.x - v.x, y: this.y - v.y };
+    }
 
 
 }
