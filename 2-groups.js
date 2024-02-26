@@ -7,7 +7,34 @@ Give the class a static from method that takes an iterable object as argument an
 */
 
 class Group {
-  
+
+  constructor() {
+    this.group = [];
+  }
+
+  add(value) {
+    if (!this.has(value)) {
+      this.group.push(value);
+    }
+  }
+
+  delete(value) {
+    if (this.has(value)) {
+      this.group = this.group.filter(x => x !== value)
+    }
+  }
+
+  has(value) {
+    return this.group.includes(value)
+  }
+
+  static from(iterableObject) {
+    const group = new Group();
+    for (const value of iterableObject) {
+      group.add(value);
+    }
+    return group;
+  }
   
   }
   

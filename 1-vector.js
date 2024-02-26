@@ -9,10 +9,14 @@
 class Vec {
 
     constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        length = Math.sqrt(this.x * this.x + this.y * this.y);
-        }
+        this.x = x || 0;
+        this.y = y || 0;
+    }
+
+    get length() {
+      return Math.sqrt(this.x * this.x + this.y * this.y);
+    }
+
 
     plus(v) {
         return { x: this.x + v.x, y: this.y + v.y };
@@ -22,10 +26,7 @@ class Vec {
         return { x: this.x - v.x, y: this.y - v.y };
     }
 
-
 }
-
-
 
 
 // Tests:
